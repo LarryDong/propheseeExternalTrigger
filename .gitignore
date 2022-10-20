@@ -1,3 +1,9 @@
+
+build/
+data/
+*.raw
+
+
 # Prerequisites
 *.d
 
