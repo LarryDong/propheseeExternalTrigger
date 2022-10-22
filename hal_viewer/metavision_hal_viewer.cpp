@@ -179,7 +179,7 @@ int main(int argc, char *argv[]) {
     // and we also set the camera as Master so that we can test the Sync Out signal if needed.
     Metavision::I_TriggerOut *i_trigger_out = device->get_facility<Metavision::I_TriggerOut>();
     Metavision::I_TriggerIn *i_trigger_in   = device->get_facility<Metavision::I_TriggerIn>();
-    i_trigger_in->enable(1);        // TODO: unable the trigger_in.
+    i_trigger_in->enable(1);        // TODO: enable the trigger_in.
     // if (i_trigger_in) {
     //     if (i_trigger_out) {
     //         i_trigger_out->set_period(100000);
