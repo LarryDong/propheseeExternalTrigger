@@ -15,6 +15,7 @@ set(THREADS_PREFER_PTHREAD_FLAG ON)
 
 find_package(MetavisionHAL REQUIRED)
 find_package(Boost COMPONENTS program_options REQUIRED)
+set(OpenCV_DIR /usr/local/lib)                              # to avoid find opencv in anaconda's
 find_package(OpenCV 3.2 COMPONENTS core highgui REQUIRED)
 find_package(Threads REQUIRED)
 

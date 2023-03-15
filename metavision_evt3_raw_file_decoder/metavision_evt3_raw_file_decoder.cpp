@@ -182,6 +182,8 @@ int main(int argc, char *argv[]) {
 
     std::string cd_str = "", trigg_str = "";
 
+    int counter=0;
+
     while (input_file) {
         input_file.read(reinterpret_cast<char *>(buffer_read.data()),
                         WORDS_TO_READ * sizeof(Metavision::Evt3::RawEvent));
@@ -327,8 +329,10 @@ int main(int argc, char *argv[]) {
                     // value = ev_trigg->value
                     // id = ev_trigg->id
                     // time = current_time (in us)
-                    trigg_str += std::to_string(ev_trigg->value) + "," + std::to_string(ev_trigg->id) + "," +
-                                 std::to_string(current_time) + "\n";
+                    // trigg_str += std::to_string(ev_trigg->value) + "," + std::to_string(ev_trigg->id) + "," +
+                    //              std::to_string(current_time) + "\n";
+                    if(ev_trigg->value == 1)
+                        trigg_str += std::to_string(counter++) + "," + std::to_string(current_time) + "\n";
                 }
                 break;
             }

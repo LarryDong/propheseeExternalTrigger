@@ -153,7 +153,7 @@ int main(int argc, char *argv[]) {
         system_id = i_hw_identification->get_system_id();
         std::cout << "System ID: " << system_id << std::endl;
     }
-    std::cout<<1<<std::endl;
+    // std::cout<<1<<std::endl;
     Metavision::I_DeviceControl *i_device_control = device->get_facility<Metavision::I_DeviceControl>();
     if (in_raw_file_path.empty() && !i_device_control) {
         std::cerr << "Could not get Device Control facility." << std::endl;
@@ -170,7 +170,7 @@ int main(int argc, char *argv[]) {
         std::cerr << "Could not initialize events stream." << std::endl;
         return 3;
     }
-    std::cout<<1<<std::endl;
+
     /// [RawfileCreation]
 
     /// [triggers]
@@ -248,7 +248,7 @@ int main(int argc, char *argv[]) {
         }
     }
     /// [biases]
-std::cout<<2<<std::endl;
+    // std::cout<<2<<std::endl;
     Metavision::I_EventRateNoiseFilterModule *i_event_rate_noise_filter_module =
         device->get_facility<Metavision::I_EventRateNoiseFilterModule>();
     if (i_event_rate_noise_filter_module) {
@@ -309,6 +309,7 @@ std::cout<<2<<std::endl;
     cv::Mat display;                                                      // frame where events will be accumulated
     const std::string window_name = "Metavision HAL Viewer";
 
+    using namespace std;
     cv::namedWindow(window_name, cv::WINDOW_GUI_EXPANDED);
     cv::resizeWindow(window_name, i_geometry->get_width(), i_geometry->get_height());
 
